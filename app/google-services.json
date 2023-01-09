@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "455325086142",
+    "firebase_url": "https://authenticationappswiftui-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "authenticationappswiftui",
+    "storage_bucket": "authenticationappswiftui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455325086142:android:478dd34b436a34395949ef",
+        "android_client_info": {
+          "package_name": "com.example.todoappkotlinfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455325086142-3qntnnlf8nggs8b0il1btnthprngufgg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIwwDdchBciC93nvrJCbqKxBe2anfBIhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455325086142-3qntnnlf8nggs8b0il1btnthprngufgg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "455325086142-q9uigsiukdpqhlim5hdof6gnap5pd442.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codewithviet.AuthenticationAppSwiftUI"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
