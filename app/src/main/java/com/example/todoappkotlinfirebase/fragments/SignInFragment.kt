@@ -35,11 +35,10 @@ class SignInFragment : Fragment() {
         }
 
         binding.nextBtn.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val pass = binding.passEt.text.toString()
+            val email = binding.emailEt.text.toString().trim()
+            val pass = binding.passEt.text.toString().trim()
 
             if (email.isNotEmpty() && pass.isNotEmpty())
-
                 loginUser(email, pass)
             else
                 Toast.makeText(context, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
@@ -47,6 +46,7 @@ class SignInFragment : Fragment() {
     }
 
     private fun loginUser(email: String, pass: String) {
+        binding.progressBar.visibility = View.VISIBLE
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
                 Toast.makeText(context, "User Login successfully", Toast.LENGTH_SHORT).show()
@@ -54,7 +54,7 @@ class SignInFragment : Fragment() {
             }
             else
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
+            binding.progressBar.visibility = View.GONE
         }
     }
 

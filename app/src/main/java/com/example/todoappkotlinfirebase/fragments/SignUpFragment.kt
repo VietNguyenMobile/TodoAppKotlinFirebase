@@ -36,9 +36,9 @@ class SignUpFragment : Fragment() {
         }
 
         binding.nextBtn.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val pass = binding.passEt.text.toString()
-            val verifyPass = binding.verifyPassEt.text.toString()
+            val email = binding.emailEt.text.toString().trim()
+            val pass = binding.passEt.text.toString().trim()
+            val verifyPass = binding.verifyPassEt.text.toString().trim()
             if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty()) {
                 if (pass == verifyPass) {
                     registerUser(email, pass)
@@ -51,6 +51,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun registerUser(email: String, pass: String) {
+        binding.progressBar.visibility = View.VISIBLE
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
                 navController.navigate(R.id.action_signUpFragment_to_homeFragment)
@@ -58,6 +59,7 @@ class SignUpFragment : Fragment() {
             }
             else
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
+            binding.progressBar.visibility = View.GONE
         }
     }
 
